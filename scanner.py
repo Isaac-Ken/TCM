@@ -3,7 +3,7 @@ import sys
 import socket
 from datetime import datetime
 
-#Define our target
+#Define Target
 if len(sys.argv)==2:
 	target = socket.gethostbyname(sys.argv[1])#Translate hostname to IPv4
 else:
@@ -16,7 +16,7 @@ print("Scan Start: "+str(datetime.now()))
 print("#" * 50)
 
 try:
-	for port in range (1,99):
+	for port in range (1,99):#define ports
 		s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		socket.setdefaulttimeout(1)
 		result=s.connect_ex((target,port))#returns an error indicator
